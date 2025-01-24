@@ -163,12 +163,12 @@
 #   end
 # end
 
-# movies = [
-#   ["Fantasy", #genre
-#     ["Harry Potter", "Pirates of the Carribean"]], #titles
-#   ["Comedy", #genre
-#     ["50 First Dates", "Bridesmaids"]] #titles
-# ]
+movies = [
+  ["Fantasy", #genre
+    ["Harry Potter", "Pirates of the Carribean"]], #titles
+  ["Comedy", #genre
+    ["50 First Dates", "Bridesmaids"]] #titles
+]
 
 # movies.each do |genre, titles| #|index 0, index 1, ...|
 #   puts "#{genre} Movies:"
@@ -180,6 +180,7 @@
 #     # - Bridesmaids
 #   end
 # end
+
 # Fantasy Movies:
 # - Harry Potter
 # - Pirates of the Carribean

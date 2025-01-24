@@ -72,7 +72,7 @@ next #Skips the current iteration and moves on to the next.
 #git pull - fetch from adn merge with another repository or local branch 
 #git push - updates remote files 
 #rm -rf .git - gemoves all git information
-#
+
 
 
 # .reverse to flip the text.
