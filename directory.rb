@@ -88,3 +88,12 @@ next #Skips the current iteration and moves on to the next.
 #   3
 # p - prints array the way it was typed [1,2,3]
 # ex: number=[4,5,6]; p number[2] = 6 # arrays numbered as [0, 1, 2, 3, ....]
+
+
+#array.select { |element| condition } 
+#Parameters: The condition is defined using a block. Each element of the array is passed to the block, and if the block returns true, that element is included in the resulting array.
+# Return Value: .select returns a new array containing the filtered elements and does not modify the original array.
+
+# array.reject! { |element| condition }
+# Parameters: The condition is typically defined using a block. Each element of the array is passed to the block, and if the block returns true, that element will be removed from the array.
+# In-Place Modification: Because .reject! modifies the original array, it does not create a new array. This is different from .reject, which returns a new array without modifying the original.

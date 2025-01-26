@@ -1,3 +1,5 @@
+#----------------- EXERCISE: COLLAB w/ Aureana ----------------------------
+
 shopping_list = []
 
 loop do 
