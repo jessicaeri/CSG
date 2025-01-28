@@ -1,4 +1,4 @@
-# --------------------- DAY  5-------------------------------
+# --------------------- DAY  6 -------------------------------
 
 # Question of the Day: Would you rather sweat MAYO or have grass for hair?
 # Grass for hair DUH.
