@@ -116,6 +116,7 @@
 #adding to hash
 # numbers = [1, 2, 3, 4, 5]
 # numbers.push(10) #adds 10 to the end
+# numbers << 10 #^ the same
 # p numbers #//[1, 2, 3, 4, 5, 10]
 
 # person_a = {
@@ -237,7 +238,7 @@
 
 #------------------------------------------------------------
 
-# Arrays are great foran ordered list!!
+# Arrays are great for an ordered sequential list!!
     #todolist
   # numbers = [1, 2, 3, 4, 5]
 
@@ -249,4 +250,5 @@
   #   age: 26,
   #   hobby: "DIY-ing"
   # }
+
 
