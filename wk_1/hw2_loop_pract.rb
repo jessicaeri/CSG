@@ -109,13 +109,33 @@
 
 #While takes longer, but could be based off user error since dependent on user input timing. 
 
-puts "Enter a number 'n' to creat a multiplication table:"
-n = gets.chomp.to_i
+# puts "Enter a number 'n' to creat a multiplication table:"
+# n = gets.chomp.to_i
 
 
-for i in 1..n 
-  for j in 1..n
-    print "#{i*j}" #with some spacing 
-  end 
-  puts #new line after each row will appear
-end
+# for i in 1..n 
+#   for j in 1..n
+#     print "#{i*j}" #with some spacing 
+#   end 
+#   puts #new line after each row will appear
+# end
+
+#String Slicing
+
+
+# puts "Please type something"
+# input_string = gets.chomp.strip #"hello"
+# index = input_string.length - 1 #starts with last character "o"
+
+# reversed_str = "" #manually inputed
+# while index >= 0 #while input is more than 0
+#   reversed_str << input_string[index] #reverse string is less than the input string's length
+#   index -= 1 #subtracts one chracter each iteration
+# end
+
+# puts "Manual reverse string input: #{reversed_str}"
+# puts "Built-in reverse string input: #{input_string.reverse}"
+# # Please type something
+# # hello
+# # Manual reverse string input: olleh
+# # Built-in reverse string input: olleh

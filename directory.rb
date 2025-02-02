@@ -97,3 +97,10 @@ next #Skips the current iteration and moves on to the next.
 # array.reject! { |element| condition }
 # Parameters: The condition is typically defined using a block. Each element of the array is passed to the block, and if the block returns true, that element will be removed from the array.
 # In-Place Modification: Because .reject! modifies the original array, it does not create a new array. This is different from .reject, which returns a new array without modifying the original.
+
+#.inspect = used to return a printable version of the given string, surrounded by quote marks, with special characters escaped
+
+# SHFT CMD ENTER inserts a new blank line above your current line and moves your cursor onto it
+
+ # Merging Hashes:
+      # Merging combines two hashes into one. The merge method returns a new hash with the contents of both, while merge! modifies the original hash directly.
