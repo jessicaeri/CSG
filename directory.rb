@@ -104,3 +104,25 @@ next #Skips the current iteration and moves on to the next.
 
  # Merging Hashes:
       # Merging combines two hashes into one. The merge method returns a new hash with the contents of both, while merge! modifies the original hash directly.
+
+# # one liners 
+# # each 
+# numbers.each { |number| puts "The number is #{number}" }
+# person.each { |key, value| puts "#{key.capitalize}: #{value}" }
+
+# # map
+# squares = numbers.map { |number| number * number }
+
+# # select 
+# even_numbers = numbers.select { |number| number.even? }
+
+# # reject
+# consonants = letters.reject { |letter| ["a", "e", "i", "o", "u"].include?(letter) }
+
+# # reduce 
+# sum = numbers.reduce(0) { |total, number| total + number }
+
+# # sort 
+# sorted_numbers = numbers.sort { |a, b| a <=> b }
+
+# # sort_by
