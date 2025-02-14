@@ -3,7 +3,7 @@
 # Question of the Day: what is your biggest takeaway from this?
 # I really didn't know what to expect from this, but when I finally dove in its actually so easy and so fun. So don't be afraid to try new things. 
 
-#Hotkey of the day: Mac: Cmd + P / Windows: Ctrl + P – Quickly open a file in VSCode
+#Hotkey of the day: Mac: Shift + Cmd/Ctrl + F - global search in whatever folder/project you have open in VSCode
 
 #-----------------------------------------------------------------
 #Whats a class?

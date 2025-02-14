@@ -3,7 +3,7 @@
 # Question of the Day: If you have a deadline, are you a get it done right away or wait til the last minute?
     # Both. but if I have alot of stuff. I would do all the easy ones first and usually the last ones are harder and would do it til the last minute...
 
-#Hotkey of the day: 
+#Hotkey of the day:  CMD + B – Toggle sidebar visibility.
 
 #-----------------------------------------------------------------
 
@@ -86,17 +86,25 @@ end
 # end
 
 class Library
-    def fetch_books_from_api #mocking an API database 
-            # Simulate a call to an external API
-      sleep(5) 
-            # Simulates network delay - pauses it 2 seconds 
-      ["Book 1", "Book 2", "Book 3"]
+    def fetch_books_from_api
+      # Simulate a call to an external API
+      sleep(2) # Simulates network delay
+      return ["Book 1", "Book 2", "Book 3"]
     end
   
     def books
-      @books ||= fetch_books_from_api 
+      @books ||= fetch_books_from_api
     end
+  
+    # def books
+    #   if @books.nil?
+    #     @books = fetch_books_from_api
+    #   end
+    #   @books
+    # end  
   end
 
-  library = Library.new
-  puts library.fetch_books_from_api
+#   library = Library.new
+#   puts library.fetch_books_from_api
+
+

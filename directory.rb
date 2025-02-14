@@ -126,3 +126,29 @@ next #Skips the current iteration and moves on to the next.
 # sorted_numbers = numbers.sort { |a, b| a <=> b }
 
 # # sort_by
+
+
+# F -muthafuckin- 12 - Go to definition
+
+# CTRL K + D - Format code
+
+# ctrl shift b - build all
+
+# f5 - debug program
+
+# shift f5 - stop debugging
+
+# ctrl s - save
+
+# ctrl shift s - save all
+
+# rspec --init - creates rspec in file
+#   create   .rspec
+#   create   spec/spec_helper.rb
+#rspec spec/
+
+# git branch - shows the different branches available
+# git checkout -b [branch name] - creates a new branch with that branch name
+# git checkout [branch name] - switches to that branch
+# git checkout -- [branch name] - deletes branch
+# git branch -a - shows all branches 
