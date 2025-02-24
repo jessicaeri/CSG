@@ -148,7 +148,56 @@ next #Skips the current iteration and moves on to the next.
 #rspec spec/
 
 # git branch - shows the different branches available
+# git branch -D [branch name] - deletes branch 
 # git checkout -b [branch name] - creates a new branch with that branch name
 # git checkout [branch name] - switches to that branch
 # git checkout -- [branch name] - deletes branch
 # git branch -a - shows all branches 
+
+# Resolving Merge Conflicts:
+  # When a conflict arises during a merge, Git will mark the conflicts in the affected files. For example:
+
+    # <<<<<<< HEAD 
+    # puts "Change from branch A" 
+    # ======= 
+    # puts "Change from branch B" 
+    # >>>>>>> branch_b
+    
+  # Edit the file to resolve the conflict by choosing the desired changes or merging them as needed. For example:
+  
+    # puts "Final merged change"
+
+  # After resolving the conflict, add the file and commit to complete the merge:
+
+    # git add filename.rb 
+    # git commit
+
+    # Rebasing Example:
+
+  # To rebase a feature branch onto main, first check out the feature branch:
+    # git checkout feature-branch 
+    # git rebase main
+
+  # Resolve any conflicts if they arise, then continue the rebase:
+
+    # git add conflicted_file.rb 
+    # git rebase --continue
+
+  # Key Point: Use rebasing to create a linear history and resolve conflicts by manually editing the code to combine changes.
+  
+  # my_api
+  
+  #       app/
+  #       controllers/
+  #       Contains controllers that handle incoming requests.
+  #       models/
+  #       Contains models that interact with the database.
+  #       config/
+  #       routes.rb
+  #       Defines the routes for your application.
+  #       database.yml
+  #       Contains database configuration.
+  #       db/
+  #       Contains database migrations and schema files.
+  #       Gemfile
+  #       Lists gem dependencies for the application.

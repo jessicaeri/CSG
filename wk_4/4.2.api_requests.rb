@@ -100,8 +100,8 @@ url= URI("https://hp-api.onrender.com/api/spells")
 response = Net::HTTP.get(url) #1. sent request, 2. get response
 data = JSON.parse(response) #3. parse the JSON
 
-# puts "What spell are you interested in? Input keyword(e.g. killing, water, etc)."
-# keyword = gets.chomp.downcase
+puts "What spell are you interested in? Input keyword(e.g. killing, water, etc)."
+keyword = gets.chomp.downcase
 
 spells_array = data #creates local array
 
