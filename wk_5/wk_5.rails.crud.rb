@@ -189,7 +189,7 @@ Create another API/database
 # Create the Product model by running 
 #   rails generate model Product name:string price:decimal
 
-# Check that it created a file in app/models/product.rb and a migration file. in db/migrate/
+# Check that it created a file \in app/models/product.rb and a migration file. in db/migrate/
 
 # Run rails db:migrate  to set up the database tables
 
@@ -634,7 +634,9 @@ amc = Vet.find(1) variables delete after every reset
 Rails API Exercise
 Create a New Rails API App (PostgreSQL)
 From your terminal, create a new Rails project in API mode and specify PostgreSQL as the database.
+
 rails new <app_name> --api --database=postgresql 
+
 Navigate into the new project folder.
 cd <app_name>
 Configure Your Database
