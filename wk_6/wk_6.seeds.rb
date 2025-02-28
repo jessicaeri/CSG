@@ -490,3 +490,74 @@ rails generate rspec:model Order (again for subscription)
         orders.rb
         subscription.rb
 
+# --------------------- WEEK 6.4 - DAY  29 -------------------------------
+
+# Question of the Day: Would you rather have a fridge that ran out of food? Or car that never ran out of gas?
+#Fridge!!!
+
+
+#Hotkey of the day: rails s - rails server
+#-----------------------------------------------------------------
+
+#RSPEC
+
+rails new rspec_demo --api --database=postgresql
+
+
+
+
+
+
+rails db:create db:migrate db:seed
+
+rails generate model Order item_name:string cancelled:boolean
+
+puts "Creating Orders..."
+
+Order.create!(item_name: "Sample Order 1", cancelled: false)
+Order.create!(item_name: "Sample Order 2", cancelled: true)
+Order.create!(item_name: "Sample Order 3", cancelled: false)
+Order.create!(item_name: "Sample Order 4", cancelled: true)
+
+puts "Seeded #{Order.count} orders."
+
+rails generate controller orders
+
+gem 'rspec-rails'
+gem 'factory_bot_rails'
+
+rails generate rspec:install
+
+In the spec/rails_helper.rb, add this line:
+config.include FactoryBot::Syntax::Methods
+
+mkdir -p spec/factories
+mkdir -p spec/models
+mkdir -p spec/requests
+
+FactoryBot.define do
+  factory :order do
+    item_name { "Sample Item" }
+    cancelled { false }
+  end
+end
+
+require 'rails_helper'
+
+RSpec.describe Order, type: :model do
+  it 'can create an order with the default factory' do
+    order = create(:order)
+    expect(order).to be_valid
+  end
+end
+
+# --------------------- WEEK 6.4 - DAY  30 -------------------------------
+
+# Question of the Day: What's your fave thing about CSG?
+#How much we've learned so far and the second nature of things.
+
+
+#Hotkey of the day: rails s - rails server
+#-----------------------------------------------------------------
+
+#RSPEC

@@ -530,7 +530,7 @@ Why Use Validations?
    - Security: Minimizes malicious or unexpected input (like extremely large numbers) being stored in your database.
    - Consistency: Everyone using the API has to meet the same criteria, resulting in uniform, high-quality data.
 
-Common Validation Types
+Common Validation Types (w/in models)
 
 presence: true
   Ensures a field isn’t empty (nil or an empty string).
