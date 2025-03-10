@@ -80,10 +80,10 @@ Rails is a web application framework written in Ruby. A Rails API is a backend a
 
    - Open `app/controllers/users_controller.rb`.
    - Add:
-
+   #User.create but remove user.save
      ```ruby
      class UsersController < ApplicationController
-       def create
+       def create #can be 
          user = User.new(
            name: params[:name],
            email: params[:email],
@@ -515,4 +515,142 @@ Proper logs or testing confirm only the correct roles can perform each action.
 
 
 if you want a method to return true or false its good to put a "?" at the end (e.g. show?)
+
+# --------------------- WEEK 7.4 - DAY  33 -------------------------------
+
+# Question of the Day: What is your dream job if you have no responsibilities?
+
+#Hotkey of the day: 
+#-----------------------------------------------------------------
+
+VERSIONING:
+
+Decide on a resource to build (e.g., Users, Posts, etc.).
+
+In config/routes.rb, create your namespaced routes:
+  namespace :api do
+    namespace :v1 do
+      resources :users
+      # or resources :posts, etc.
+    end
+  end
+
+Generate a namespaced controller:
+  rails generate controller api/v1/users
+
+Ensure it’s placed in app/controllers/api/v1/.
+
+Update the new controller to respond with simple JSON (e.g., a UsersController#index method).
+Test the routes with Postman or cURL at /api/v1/users.
+
+(Option B) Update an Existing Rails Application
+    Pick an existing Rails project that responds with JSON.
+    Add the api/v1 structure in config/routes.rb:
+   
+    namespace :api do
+      namespace :v1 do
+      # Move or recreate your existing routes here
+      end
+    end
+
+Create directories for namespaced controllers:
+    mkdir -p app/controllers/api/v1
+      #put all the controllers you'd want that would have different versions
+    #main (e.g. user) controller functions shouldn't be in the api/v#
+      #technically can have user but routes.rb would need to be within the controller 
+    #can have same exact controller names within different namespace 
+        #ex v1/team_controller
+        #ex v2/team_controller
+
+
+Move or copy your existing controllers into app/controllers/api/v1/ and update their module definitions accordingly:
+    module Api
+      module V1
+        class UsersController < ApplicationController
+          # existing actions...
+        end
+      end
+    end
+
+Refactor references – anywhere you used the old controllers or routes, update them to point to the new api/v1 version.
+
+Test all your endpoints to confirm they now work at URLs like /api/v1/users.
+
+(Optional) Introduce a Second Version, v2 
+Create another namespace under api:
+    namespace :api do
+      namespace :v1 do
+        resources :users
+      end
+
+      namespace :v2 do
+        resources :users
+      end
+    end
+
+Copy your v1 controllers into a v2 folder, then make some changes (e.g., returning extra JSON fields).
+Confirm you can still access old endpoints at /api/v1/... while new ones exist at /api/v2/....
+
+Exercise Deliverables
+    Namespaced routes for /api/v1/....
+
+    A controller inside app/controllers/api/v1/ that successfully returns JSON data.
+    
+    (Optional) A second version under v2 that shows at least one difference from v1.
+    
+    Screenshot or short demonstration of you calling these endpoints via Postman/cURL to prove everything is functional.
+Additional Notes / Hints
+    For a brand-new project, remember to commit your initial codebase, then commit again after adding namespaces.
+    
+    If you are moving a large existing app into namespaces, do it gradually – route by route, controller by controller, testing each step.
+
+For debugging, run:
+rails routes
+to ensure your routes are correctly set up.
+Check for naming conflicts or mis-matched module definitions, e.g. module Api::V1 in the file while it’s physically placed in app/controllers/api/v2.
+
+# --------------------- WEEK 7.4 - DAY  33 -------------------------------
+
+# Question of the Day: Would you be a severed employee???
+YESSSS
+
+#Hotkey of the day: 
+#-----------------------------------------------------------------
+
+Resources:
+Does all of the code routes for you...
+Unless you wanted a very specific route then youd have to explicitly  write it out
+
+routes.rb
+resources :controller name, only : [:name of method, etc.] 
+                            except : [:name of method, etc.]
+
+#allows routes to nest 
+      localhost:3000/teachers/1/students
+resources :teacher do 
+  resources :students do 
+end 
+
+resources :teacher do 
+  collection do 
+
+  end 
+
+  member do 
+    get :something_cool
+  end 
+end 
+
+For non-CRUD resources routes
+   - Member = one item → :id in the path.
+   - Collection = all items → no :id.
+
+Pundit: https://github.com/CodeSchoolOfGuam-PilotClass/Resources/blob/main/AUTHENTICATION/guide_implementing_roles_with_pundit.md
+Authentication: https://github.com/CodeSchoolOfGuam-PilotClass/Resources/blob/main/AUTHENTICATION/guide_implementing_rails_authentication.md
+
+Token expiration?
+
+
+initializers/filter parameters
+  controls what we can and cannot see within in general (rails c, rails s, everywhere)
 
