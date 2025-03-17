@@ -158,4 +158,107 @@ GET http://localhost:3000/news
 Basically this hides sensitive information you want. 
 
 #-----------------------------------------
+ 
+Week 8.2 SIDEKIQ 
+Sidekiq 
+  - basically allows you to run two programs/servers at once 
+  - longer loading/running programs would be ran in the BACKGROUND (sidekiq)
+      while the shorter programs could be ran on the server
+  - For apps, it would better the user experience 
 
+How to run?
+
+1. run these global commands (once per computer)
+  brew install redis 
+  brew services start redis
+
+2. Install/run sidekiq
+gem 'sidekiq'
+bundle install 
+
+3. create and set up sidekiq initializer
+config/sidekiq.rb 
+
+Sidekiq.configure_server do |config|
+  config.redis = { url: ENV['REDIS_URL'] || 'redis://localhost:6379/0' }
+end
+
+Sidekiq.configure_client do |config|
+  config.redis = { url: ENV['REDIS_URL'] || 'redis://localhost:6379/0' }
+end
+
+4. create worker folder in app folder
+app/worker 
+
+5. create methodname_worker.rb file 
+ex: hard_worker.rb 
+class HardWorker
+  include Sidekiq::Worker
+
+  def perform(name, count)
+    sleep(count)
+    puts "Hello #{name}"
+  end
+end
+
+6. call for worker file in controller (also set up seeds if you are testing)
+
+  seeds.rb
+  user = User.create(
+  name: "Leon"
+  )
+
+  i = 0
+  10.times do
+    Product.create(
+      name: "Product #{i}",
+      price: i,
+      category: "test",
+      user_id: user.id
+    )
+    i += 1
+  end
+
+  controller.rb
+class ProductsController < ApplicationController
+  def index
+    HardWorker.perform_async("Leon", 3)
+
+    products = Product.all
+    render json: products
+  end
+end
+
+different perform functions
+class ProductsController < ApplicationController
+  def index
+    # perform_async(*args)
+      HardWorker.perform_async("Leon", 3, 1, 2, 3, 4, 5)
+          - runs async. runs when it gets the chance to.
+          - "Run this task as soon as possible, but you dont have to do it right now."
+          - task added to a queue, and Sidekiq will run it when theres an available worker.
+          - Youre not controlling when it runs, just saying, "Please do this when you can."
+    # perform_in(interval, *args)
+      HardWorker.perform_in(10.seconds, "Leon", 3, 1, 2, 3, 4, 5)
+          - "Wait 10 seconds, then run the task"
+          - wont be executed immediately, instead its SCHEDULED 
+    # perform_at(interval, *args)
+      HardWorker.perform_at(1.day.from_now, Leon, 3)
+      - "Run this task at exactly this time in the future."
+      - Insead of waiting for a random time, it is scheduled for a SPECIFIC moment.
+    
+
+    products = Product.all
+    render json: products
+  end
+end
+
+7. run and execute 
+terminal (any):
+rails db:create
+rails db:migrate
+
+terminal 1: rails s
+terminal 2: bundle exec sidekiq
+
+#--------------------------------------------------
