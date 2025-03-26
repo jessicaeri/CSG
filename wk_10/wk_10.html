@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<!-- 
+This tells the browser: "Hey, this is an HTML5 document."
+-->
+
+<html>
+
+<head>
+  <!-- 
+    The <head> tag contains information about the page that isn't visible on the page itself.
+    -->
+
+  <meta charset="UTF-8" />
+  <!-- 
+    This sets the character encoding (so special characters like emojis or ñ work properly).
+    -->
+
+  <title>My Web Page</title>
+  <!-- 
+    This is what shows up on the browser tab.
+    -->
+</head>
+
+<body>
+  <!-- 
+    The <body> contains everything that shows up on the actual web page.
+    -->
+
+  <h1 id="main-title">Hello World</h1>
+  <!-- 
+    <h1> is a large heading, often used for titles.
+    The "id" is a unique name for this element, which can be useful in styling or scripting.
+    -->
+
+  <p. class="intro-text">This is a paragraph with some introduction text.</p>
+    <!-- 
+    <p> is used for paragraphs of text.
+    "class" is a label that can be used to apply styling or behavior to many elements.
+    -->
+
+    <div class="content-section">
+      <!-- 
+      <div> is a generic container for grouping other elements together.
+      It's often used to organize content on the page.
+      -->
+
+      <p>Another paragraph inside a div.</p>
+      <!-- 
+      This paragraph is inside the div, which means it's grouped as part of that section.
+      -->
+    </div>
+
+</body>
+
+</html>
+
+<!-- 
+QUICK HTML REFERENCE (ALL EXPLAINED IN NON-CODER TERMS):
+
+<html>   = The main wrapper that holds everything.
+<head>   = Stuff for the browser, not shown on the page (like page title, character settings).
+<meta>   = Information about the page (like encoding).
+<title>  = Sets what appears on the browser tab.
+<body>   = The main content users see and interact with.
+
+<h1> to <h6> = Headings, from biggest (<h1>) to smallest (<h6>).
+<p>           = A paragraph (a block of text).
+<div>         = An invisible box for grouping content (useful for layout).
+<span>        = A smaller inline container (for grouping short text).
+<a>           = A clickable link (use href="URL" to tell it where to go).
+<ul>          = Unordered list (bullets).
+<ol>          = Ordered list (numbers).
+<li>          = List item (goes inside <ul> or <ol>).
+<img>         = Shows an image (use src="file-path.jpg" to choose which image to show).
+-->
+
+<!-- 
+=======================
+ID vs CLASS in HTML
+=======================
+
+ID (id attribute)
+-----------------
+- Uniquely identifies a single element on the page.
+- You should only use a specific ID **once per page**.
+- Commonly used in:
+    • JavaScript — example: document.getElementById("myId")
+    • CSS — example: #myId { color: red; }
+
+Class (class attribute)
+------------------------
+- Used to group multiple elements that share the same style or behavior.
+- You can use the same class **on many elements**.
+- An element can also have **more than one class** — just separate them with spaces.
+- Commonly used in:
+    • CSS — example: .myClass { font-size: 16px; }
+    • JavaScript — example: document.querySelectorAll(".myClass")
+
+Example:
+
+<h1 id="main-title">This has a unique ID</h1>
+<p class="highlighted-text">This has a shared class</p>
+<p class="highlighted-text intro">This has TWO classes</p>
+
+-->
+
+
+<!-- 
+===============================
+Simple HTML Practice Exercise
+===============================
+
+1. Create a new HTML file named: index.html
+
+2. Add the following structure:
+
+   - A <!DOCTYPE html> declaration at the very top.
+   - An <html> tag that wraps everything.
+   - Inside <html>, include <head> and <body> sections.
+
+3. Inside the <head>:
+   - Set the <title> to something like "HTML Practice".
+
+4. Inside the <body>, add:
+
+   - An <h1> element with an id of "page-title".
+   - A <p> (paragraph) with a class of "intro".
+   - A <div> with a class name of your choice.
+     - Inside that <div>, put a second <p>.
+
+5. Save the file and open it in your browser. Check the following:
+
+   ✔ You see your custom title in the browser tab.
+   ✔ You see your heading and both paragraphs on the page.
+
+6. (Optional Bonus):
+   Add some simple styling:
+   - You can use inline CSS (inside the HTML tag with style="...") 
+     OR
+   - Add a <style> block in the <head> section to style the .intro class.
+
+   Example of inline style:
+   <p class="intro" style="color: blue; font-weight: bold;">Styled paragraph</p>
+
+   Example of internal CSS:
+   <style>
+     .intro {
+       color: blue;
+       font-weight: bold;
+     }
+   </style>
+
+-->
+
+<!---------------- CSS: Cascading Style Sheets-------------- -->
+
+<!-- 
+==============================
+CSS Rule Structure Explained
+==============================
+
+Basic CSS rule format:
+
+selector {
+  property: value;
+  property: value;
+}
+
+------------------------------
+WHAT EACH PART MEANS:
+------------------------------
+
+- selector:
+  This tells the browser which HTML elements to style.
+  It could be a tag name (like p), a class (.classname), or an ID (#idname).
+
+- property:
+  This is what you want to change (like color, font-size, or spacing).
+
+- value:
+  This is what you want to change it to (like red, 16px, center, etc.).
+
+------------------------------
+EXAMPLES:
+------------------------------
+
+1. Tag selector (styles ALL <p> tags):
+p {
+  color: green;
+  font-size: 16px;
+}
+
+2. Class selector (styles elements with class="intro"):
+.intro {
+  color: blue;
+  font-weight: bold;
+}
+
+3. ID selector (styles element with id="page-title"):
+#page-title {
+  font-size: 32px;
+  text-align: center;
+}
+
+Note:
+- Use . (dot) before class names in CSS
+- Use # (hash) before IDs in CSS
+-->
+
+<!-- 
+===============================
+CSS PROPERTIES + SPECIFICITY GUIDE
+===============================
+This guide gives you beginner-friendly examples of common CSS properties
+and explains how CSS specificity works — all in one place.
+You can copy and paste this into any HTML file to learn and refer to it.
+-->
+
+<!-- 
+===============================
+Common CSS Properties + Examples
+===============================
+-->
+
+<style>
+  /* Colors and Backgrounds */
+  body {
+    color: #333;
+    /* Text color */
+    background-color: #f0f0f0;
+    /* Background color of the page */
+    background-image: url("bg.jpg");
+    /* Background image (replace with your image path) */
+  }
+
+  /* Typography */
+  h1 {
+    font-size: 32px;
+    /* Size of the font */
+    font-family: Arial, sans-serif;
+    /* Font type */
+    font-weight: bold;
+    /* Makes text bold */
+    text-align: center;
+    /* Centers the heading */
+    line-height: 1.5;
+    /* Space between lines */
+  }
+
+  /* Spacing */
+  p {
+    margin: 20px;
+    /* Space outside the paragraph */
+    padding: 10px;
+    /* Space inside the paragraph */
+  }
+
+  /* Layout */
+  .box {
+    display: flex;
+    /* Flexbox layout */
+    justify-content: space-between;
+    /* Spacing between children */
+    position: relative;
+    /* Allows positioning of children */
+  }
+
+  .grid-container {
+    display: grid;
+    /* Grid layout */
+    grid-template-columns: 1fr 1fr;
+    /* Two equal columns */
+  }
+
+  /* Borders and Corners */
+  .card {
+    border: 1px solid #ccc;
+    /* A thin border */
+    border-radius: 8px;
+    /* Rounded corners */
+  }
+
+  /* Sizing */
+  .image {
+    width: 100px;
+    /* Fixed width */
+    height: auto;
+    /* Keeps aspect ratio */
+    max-width: 100%;
+    /* Prevents it from overflowing */
+    min-height: 50px;
+    /* Ensures minimum height */
+  }
+
+  /* Specificity Demonstration */
+  p {
+    color: black;
+    /* Element selector (least priority) */
+  }
+
+  .highlight {
+    color: blue;
+    /* Class overrides the element */
+  }
+
+  #special-text {
+    color: green;
+    /* ID overrides class */
+  }
+
+  /* Inline style would override all of these if added directly in the HTML like: 
+     <p style="color: red;">This wins</p>
+  */
+</style>
+
+<!-- 
+===============================
+HTML Examples Using the CSS Above
+===============================
+-->
+
+<body>
+  <h1>Typography Example</h1>
+
+  <p>This paragraph uses margin and padding for spacing.</p>
+
+  <div class="box">
+    <div>Flex Item 1</div>
+    <div>Flex Item 2</div>
+  </div>
+
+  <div class="grid-container">
+    <div>Grid Column 1</div>
+    <div>Grid Column 2</div>
+  </div>
+
+  <div class="card">
+    <p>This is inside a card with a border and rounded corners.</p>
+  </div>
+
+  <img class="image" src="example.jpg" alt="Sample Image" />
+
+  <p>This is normal text.</p>
+  <p class="highlight">This uses a class.</p>
+  <p id="special-text">This uses an ID.</p>
+  <p style="color: red;">This uses inline style (highest priority).</p>
+</body>
+
+<!-- 
+===============================
+Understanding CSS Specificity
+===============================
+
+CSS specificity determines WHICH rule "wins" when more than one rule tries to style the same element.
+
+Imagine CSS like a game — some rules are stronger than others.
+
+The order from STRONGEST to WEAKEST is:
+
+-----------------------------------------------------
+1. Inline Styles (strongest - written directly on the tag)
+-----------------------------------------------------
+This beats everything else.
+
+Example:
+<p style="color: red;">This text will be red no matter what.</p>
+
+-----------------------------------------------------
+2. IDs (e.g. #myId)
+-----------------------------------------------------
+An ID selector is very specific and beats classes and element selectors.
+
+Example:
+#title {
+  color: green;
+}
+
+<h1 id="title">This text will be green unless overridden inline.</h1>
+
+-----------------------------------------------------
+3. Classes (e.g. .myClass), Attributes, and Pseudo-classes
+-----------------------------------------------------
+Classes are used often because they are reusable and more specific than elements.
+
+Example:
+.intro {
+  color: blue;
+}
+
+<p class="intro">This paragraph will be blue if nothing stronger overrides it.</p>
+
+-----------------------------------------------------
+4. Element Selectors (e.g. p, h1, div)
+-----------------------------------------------------
+Basic tags by themselves have the least power (unless nothing else overrides them).
+
+Example:
+p {
+  color: black;
+}
+
+All <p> tags will be black — unless another class, ID, or inline style changes them.
+
+-----------------------------------------------------
+5. The Universal Selector (*) and Inherited Styles (weakest)
+-----------------------------------------------------
+* means “select everything” but has the lowest priority.
+
+Example:
+* {
+  margin: 0;
+}
+
+Also, some styles are “inherited” by child elements (like font-family), but can be easily overridden.
+
+-----------------------------------------------------
+🔄 Summary Cheat Sheet (from strongest to weakest):
+-----------------------------------------------------
+1. Inline styles  →  <p style="...">
+2. ID selector    →  #idName { ... }
+3. Class selector →  .className { ... }
+4. Element tag    →  p, h1, div { ... }
+5. Universal (*)  →  * { ... }, or inherited from parent
+
+-----------------------------------------------------
+🧠 Why This Matters:
+-----------------------------------------------------
+When styles conflict, the one with higher specificity wins.
+This helps you control exactly how your page looks, especially when using lots of CSS.
+-->
+
+
+<!-- 
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>My Web Page</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h1 id="main-title">Hello World</h1>
+    <p class="intro-text">This is a paragraph with some introduction text.</p>
+    <div class="content-section">
+      <p>Another paragraph inside a div.</p>
+      
+      <p>This is a paragraph tag...</p>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
+
+WITHIN DESIGNATED CSS FILE
+p {
+  color: orange;
+}
+
+.intro-text {
+  font-style: italic;
+}
+
+#main-title {
+  color: green;
+}
+-->
+
+<!-- --------------- JAVASCRIPT DOM MANIPULATION ----------------- -->
+<!-- 
+DOM (Document Object Model).
+-->
+
+<script src="script.js"></script>
+
+<!-- 
+===========================
+ELEMENT SELECTION METHODS
+===========================
+-->
+
+// Select element by ID
+const title = document.getElementById('main-title');
+// This grabs an element like: <h1 id="main-title">...</h1>
+
+// Select elements by class name
+const descriptions = document.getElementsByClassName('description');
+// Returns an HTMLCollection of elements with class="description"
+// Example: descriptions[0] gives the first matching element
+
+// Select the first paragraph using querySelector
+const firstParagraph = document.querySelector('p');
+// Grabs the FIRST <p> tag on the page
+
+  // Select ALL paragraph elements
+  const allParagraphs = document.querySelectorAll('p');
+  // Returns a NodeList (like an array) of all
+<p> elements
+
+  <!-- 
+===========================
+MODIFYING CONTENT
+===========================
+-->
+
+  // Change text content
+  title.textContent = "Hello Class, how are you!";
+
+  // Insert bold HTML inside the first paragraph
+  firstParagraph.innerHTML = "Hi <strong>Charles</strong>";
+
+  <!-- 
+===========================
+WORKING WITH ATTRIBUTES
+===========================
+-->
+
+  // Add or change a class
+  title.setAttribute('class', 'highlight');
+
+  // Get the current value of an attribute
+  const classValue = title.getAttribute('class');
+  console.log(classValue); // Logs "highlight"
+
+  // Change an image using JavaScript (requires an image in HTML)
+  const image = document.getElementById('my-image');
+  image.setAttribute('src', 'new-image.jpg');
+
+  <!-- 
+===========================
+CLASS LIST METHODS
+===========================
+-->
+
+  // Add a class (if it doesn’t already exist)
+  title.classList.add('highlight');
+
+  // Remove a class
+  title.classList.remove('highlight');
+
+  // Toggle a class (adds if missing, removes if present)
+  title.classList.toggle('highlight');
+
+  <!-- 
+===========================
+ADDING EVENT LISTENERS
+===========================
+-->
+
+  function handleClick() {
+  alert('Title was clicked!');
+  }
+
+  // When the user clicks the title, run handleClick()
+  title.addEventListener('click', handleClick);
+
+  // When the user hovers over the title, change its text color to red
+  title.addEventListener('mouseover', function () {
+  title.style.color = 'red';
+  });
+
+  <!-- EXERCISE
+Hands-On Coding:
+Modify the content and attributes of elements in script.js.
+Add an image to index.html and practice changing its src attribute via JavaScript.
+-->
+
+  <!-- 
+- Use console.log() to see values in the browser console.
+- Right-click → Inspect → Console tab.
+- Don’t forget to save your script.js file and refresh your browser (use Ctrl+F5 or Cmd+Shift+R).
+-->
