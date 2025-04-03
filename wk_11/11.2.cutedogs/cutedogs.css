@@ -1,0 +1,64 @@
+/* cutedogs.css */
+
+/* Soft pastel green background for the whole vibe */
+body {
+  background-color: #e6f9e6;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  color: #4d6b4d;
+  margin: 0;
+  padding: 0;
+
+
+  /* Header styling for a gentle dog-core aesthetic */
+  h1 {
+    font-size: 3rem;
+    margin-top: 30px;
+    color: #3a5a40;
+    text-shadow: 1px 1px #bce0bc;
+  }
+
+  /* Button styling with soft green tones */
+  button {
+    background-color: #cdeac0;
+    border: 2px solid #a3c4a3;
+    border-radius: 25px;
+    color: #3a5a40;
+    font-weight: bold;
+    padding: 12px 24px;
+    margin: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    box-shadow: 2px 2px 5px rgba(100, 150, 100, 0.2);
+  }
+
+  button:hover {
+    background-color: #b4ddb4;
+  }
+
+  /* The single featured dog image */
+  #dog-image {
+    max-width: 90%;
+    margin: 30px auto;
+    border: 8px solid #b7e4c7;
+    border-radius: 40px;
+    box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    padding: 10px;
+  }
+
+  /* Gallery container */
+  #dogGallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 30px;
+    gap: 20px;
+  }
+
+  /* Each gallery image gets its own pastel-green frame */
+  #dogGallery img {
+    max-width: 300px;
+    border: 10px solid #a3d9a5;
+    border-radius: 50px;
+    background-color
